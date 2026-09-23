@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2014-2026 Philip Helger (www.helger.com)
+    philip[at]helger[dot]com
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.helger</groupId>
+    <artifactId>parent-pom</artifactId>
+    <version>3.1.0</version>
+  </parent>
+  <groupId>com.helger.phive.rules</groupId>
+  <artifactId>phive-rules-legacy-parent-pom</artifactId>
+  <version>4.6.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>phive-rules-legacy-parent-pom</name>
+  <description>Base POM to build the phive rules legacy projects</description>
+  <url>https://github.com/phax/phive-rules-legacy</url>
+  <inceptionYear>2026</inceptionYear>
+
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/phax/phive-rules-legacy.git</connection>
+    <developerConnection>scm:git:https://github.com/phax/phive-rules-legacy.git</developerConnection>
+    <url>http://github.com/phax/phive-rules-legacy</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <organization>
+    <name>Philip Helger</name>
+    <url>http://www.helger.com</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>philip</id>
+      <name>Philip Helger</name>
+      <email>ph(at)helger.com</email>
+      <url>http://www.helger.com</url>
+    </developer>
+  </developers>
+
+  <properties>
+    <jaxb-plugin.group>org.jvnet.jaxb</jaxb-plugin.group>
+    <jaxb-plugin.artifact>jaxb-maven-plugin</jaxb-plugin.artifact>
+    <jaxb-plugin.version>4.0.16</jaxb-plugin.version>
+    <ph-jaxb-plugin.version>5.1.2</ph-jaxb-plugin.version>
+
+    <phive-rules-shared.version>1.0.0</phive-rules-shared.version>
+    <phive-rules-foundations.version>5.0.3</phive-rules-foundations.version>
+    <!-- The released phive-rules version this project builds against. Switch from
+         the SNAPSHOT to the final version once phive-rules 4.6.0 is released. -->
+    <phive-rules.version>4.6.0-SNAPSHOT</phive-rules.version>
+
+    <peppol-commons.version>12.10.0</peppol-commons.version>
+    <ph-cii.version>4.1.3</ph-cii.version>
+    <ph-schematron.version>10.1.0</ph-schematron.version>
+    <ph-ubl.version>10.2.1</ph-ubl.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.helger.commons</groupId>
+        <artifactId>ph-commons-parent-pom</artifactId>
+        <version>12.5.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.schematron</groupId>
+        <artifactId>ph-schematron-parent-pom</artifactId>
+        <version>${ph-schematron.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.diver</groupId>
+        <artifactId>ph-diver-parent-pom</artifactId>
+        <version>4.2.2</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.phive</groupId>
+        <artifactId>phive-parent-pom</artifactId>
+        <version>12.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.phive.rules</groupId>
+        <artifactId>phive-rules-shared</artifactId>
+        <version>${phive-rules-shared.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.phive.rules</groupId>
+        <artifactId>phive-rules-foundations-parent-pom</artifactId>
+        <version>${phive-rules-foundations.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Artefacts of the phive-rules project this project builds upon -->
+      <dependency>
+        <groupId>com.helger.phive.rules</groupId>
+        <artifactId>phive-rules-en16931</artifactId>
+        <version>${phive-rules.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.phive.rules</groupId>
+        <artifactId>phive-rules-oioubl</artifactId>
+        <version>${phive-rules.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.phive.rules</groupId>
+        <artifactId>phive-rules-all</artifactId>
+        <version>${phive-rules.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.helger.phive.rules</groupId>
+        <artifactId>phive-rules-oioubl-legacy</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.phive.rules</groupId>
+        <artifactId>phive-rules-peppol-legacy</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.helger.phive.rules</groupId>
+        <artifactId>phive-rules-all-legacy</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>phive-rules-oioubl-legacy</module>
+    <module>phive-rules-peppol-legacy</module>
+    <!-- Aggregator with all modules; must be last -->
+    <module>phive-rules-all-legacy</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.helger.maven</groupId>
+          <artifactId>ph-schematron-maven-plugin</artifactId>
+          <version>${ph-schematron.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
