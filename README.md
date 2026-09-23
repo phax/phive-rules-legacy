@@ -85,7 +85,7 @@ ValidationRulesRegistrar.registerAllValidationRules (aRegistry);
 
 # News and noteworthy
 
-v4.6.0 - work in progress
+v4.6.0 - 2026-09-23
 * Initial release after extraction from [phive-rules](https://github.com/phax/phive-rules) v4.6.0
 * Contains `phive-rules-peppol-legacy` and `phive-rules-all-legacy`, moved unchanged from `phive-rules`
 * Added the new module `phive-rules-oioubl-legacy` holding the legacy Danish OIOUBL rule sets that were previously part of `phive-rules-oioubl`:
@@ -93,6 +93,7 @@ v4.6.0 - work in progress
     * `OIOUBLLegacyValidation` (the ancient OIOUBL 2.0.2 and the government-deprecated 3.0.1 rule sets, VES group `dk.oioubl.legacy`) moved from package `com.helger.phive.oioubl` to `com.helger.phive.oioubl.legacy`
     * All VES coordinates are unchanged
 * The Peppol `openpeppol` 2024.5 and 2024.11 Schematron XSLTs moved from `phive-rules-peppol` to `phive-rules-peppol-legacy` - they were only referenced by the legacy rule sets
+* The test sources are not deployed to Maven Central - the `-test-sources.jar` artefacts would contain all the sample documents and Schematron rule sources without being usable by anyone
 
 ---
 
