@@ -30,8 +30,8 @@ import com.helger.datetime.helper.PDTFactory;
 import com.helger.diver.api.coord.DVRCoordinate;
 import com.helger.io.resource.ClassPathResource;
 import com.helger.phive.api.executorset.IValidationExecutorSetRegistry;
-import com.helger.phive.rules.shared.PhiveRulesUBLHelper;
 import com.helger.phive.rules.shared.DVRHelper;
+import com.helger.phive.rules.shared.PhiveRulesUBLHelper;
 import com.helger.phive.xml.executorset.VesXmlBuilder;
 import com.helger.phive.xml.source.IValidationSourceXML;
 import com.helger.ubl20.CUBL20;
@@ -735,7 +735,6 @@ public final class OIOUBLValidationOlder
                                                                                                       "utility-statement",
                                                                                                       VERSION_1_17_1);
 
-
   private OIOUBLValidationOlder ()
   {}
 
@@ -745,7 +744,6 @@ public final class OIOUBLValidationOlder
    * @param aRegistry
    *        The registry to add the artefacts. May not be <code>null</code>.
    */
-  @SuppressWarnings ("deprecation")
   public static void initOlderOIOUBL (@NonNull final IValidationExecutorSetRegistry <IValidationSourceXML> aRegistry)
   {
     ValueEnforcer.notNull (aRegistry, "Registry");
