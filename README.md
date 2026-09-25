@@ -85,7 +85,7 @@ ValidationRulesRegistrar.registerAllValidationRules (aRegistry);
 
 # News and noteworthy
 
-v4.6.1 - work in progress
+v4.6.1 - 2026-09-25
 * Recreated all 407 pre-compiled Schematron XSLTs of `phive-rules-oioubl-legacy` (166) and `phive-rules-peppol-legacy` (241) with ph-schematron 10.1.0, because the committed files were still the output of much older versions.
   This changes the emitted SVRL in three ways:
     * `svrl:active-pattern` is now empty, as the SVRL grammar requires.
@@ -95,7 +95,6 @@ v4.6.1 - work in progress
     * The generated pattern traversal now selects `@*|*` instead of `*`, so Schematron rules with an attribute `context` are evaluated at all.
       See ph-schematron [#123](https://github.com/phax/ph-schematron/issues/123) - that fix is in ph-schematron since v6.2.6, but the affected XSLTs were older than that.
   No rule text and no XPath expression of any rule set changed.
-  This was verified by comparing the canonical XML of every regenerated file against its predecessor, so that attribute order, indentation and XML escaping are ignored.
 
 v4.6.0 - 2026-09-23
 * Initial release after extraction from [phive-rules](https://github.com/phax/phive-rules) v4.6.0
