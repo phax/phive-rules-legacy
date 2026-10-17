@@ -29,9 +29,9 @@ import com.helger.io.resource.IReadableResource;
 import com.helger.phive.api.executorset.IValidationExecutorSet;
 import com.helger.phive.api.executorset.IValidationExecutorSetRegistry;
 import com.helger.phive.en16931.EN16931Validation;
+import com.helger.phive.rules.shared.DVRHelper;
 import com.helger.phive.rules.shared.PhiveRulesHelper;
 import com.helger.phive.rules.shared.PhiveRulesUBLHelper;
-import com.helger.phive.rules.shared.DVRHelper;
 import com.helger.phive.xml.executorset.VesXmlBuilder;
 import com.helger.phive.xml.schematron.SchematronNamespaceBeautifier;
 import com.helger.phive.xml.schematron.ValidationExecutorSchematron;
@@ -134,6 +134,7 @@ public final class OIOUBLLegacyValidation
   private OIOUBLLegacyValidation ()
   {}
 
+  @SuppressWarnings ("removal")
   @NonNull
   private static ValidationExecutorSchematron _createOIOUBL (@NonNull final IReadableResource aRes)
   {
