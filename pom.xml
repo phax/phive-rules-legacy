@@ -76,7 +76,7 @@
 
     <peppol-commons.version>13.2.1</peppol-commons.version>
     <ph-cii.version>4.1.3</ph-cii.version>
-    <ph-schematron.version>10.2.0</ph-schematron.version>
+    <ph-schematron.version>10.3.0</ph-schematron.version>
     <ph-ubl.version>10.2.1</ph-ubl.version>
   </properties>
 
