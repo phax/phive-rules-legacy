@@ -10,7 +10,8 @@ It was extracted from [phive-rules](https://github.com/phax/phive-rules) in 2026
 
 Part of the Peppol solution stack: https://github.com/phax/peppol
 
-The repository contains 3 modules:
+The repository contains 4 modules:
+- `phive-rules-legacy-bom` — Maven BOM managing the versions of all phive-rules-legacy artefacts (since 4.6.2); it uses `com.helger:parent-pom` as parent, not the project's parent POM
 - `phive-rules-oioubl-legacy` — Danish OIOUBL: the deprecated 1.12.3 … 1.17.1 rule sets (VES group `dk.oioubl`, class `OIOUBLValidationOlder`) and the ancient 2.0.2 plus government-deprecated 3.0.1 rule sets (VES group `dk.oioubl.legacy`, class `OIOUBLLegacyValidation`)
 - `phive-rules-peppol-legacy` — older Peppol rule sets
 - `phive-rules-all-legacy` — the aggregator, `PhiveRulesLegacyValidation.initPhiveRulesLegacy`

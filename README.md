@@ -18,6 +18,7 @@ All projects found in here rely on the PHIVE validation engine provided by https
 The shared API used by all rule modules - the validation rules registration SPI (`IValidationRulesRegistrarSPI`), the `ValidationRulesRegistrar`, and the core helper classes - lives in the separate [phive-rules-shared](https://github.com/phax/phive-rules-shared) project (Maven artifact `com.helger.phive.rules:phive-rules-shared`).
 
 This project is divided into the following sub-projects:
+* phive-rules-legacy-bom - a Maven Bill of Materials (BOM) that manages the versions of all phive-rules-legacy artefacts (since v4.6.2)
 * phive-rules-oioubl-legacy - Legacy validation rules for Danish OIOUBL: the deprecated 1.12.3 up to 1.17.1 rule sets (VES group `dk.oioubl`) as well as the ancient 2.0.2 and the government-deprecated 3.0.1 rule sets (VES group `dk.oioubl.legacy`)
 * phive-rules-peppol-legacy - Older Peppol specific rules that are out of date (since v2.0.5, in this repository since v4.6.0)
 
@@ -74,6 +75,21 @@ PhiveRulesValidation.initPhiveRules (aRegistry);
 PhiveRulesLegacyValidation.initPhiveRulesLegacy (aRegistry);
 ```
 
+Alternate usage as a Maven BOM (since v4.6.2) - add it to the `<dependencyManagement>` section and omit the versions of the phive-rules-legacy artefacts in your `<dependencies>`:
+
+```xml
+<dependency>
+  <groupId>com.helger.phive.rules</groupId>
+  <artifactId>phive-rules-legacy-bom</artifactId>
+  <version>x.y.z</version>
+  <type>pom</type>
+  <scope>import</scope>
+</dependency>
+```
+
+`phive-rules-legacy-bom` only manages the versions of the artefacts of this repository.
+For the current rule sets import `phive-rules-bom` from [phive-rules](https://github.com/phax/phive-rules) as well.
+
 `initPhiveRulesLegacy` can also be used standalone - it registers the EN 16931 rule sets itself if they are not present in the registry yet.
 
 Alternatively, every module on the classpath that ships an `IValidationRulesRegistrarSPI` implementation (that is, all rule modules) can be discovered and registered automatically - including the correct ordering of modules that depend on each other - via a single call:
@@ -84,6 +100,11 @@ ValidationRulesRegistrar.registerAllValidationRules (aRegistry);
 ```
 
 # News and noteworthy
+
+v4.6.2 - 2026-11-15
+* Added new submodule `phive-rules-legacy-bom` - a Maven Bill of Materials (BOM) for all phive-rules-legacy artefacts
+* The parent POM now imports the new BOMs of ph-commons, ph-schematron, ph-diver, phive, phive-rules-foundations and phive-rules instead of their parent POMs
+* Updated to phive-rules 4.7.0 and phive-rules-foundations 5.0.7
 
 v4.6.1 - 2026-09-25
 * Recreated all 407 pre-compiled Schematron XSLTs of `phive-rules-oioubl-legacy` (166) and `phive-rules-peppol-legacy` (241) with ph-schematron 10.1.0, because the committed files were still the output of much older versions.
