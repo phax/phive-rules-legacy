@@ -74,7 +74,7 @@
          the SNAPSHOT to the final version once phive-rules 4.6.0 is released. -->
     <phive-rules.version>4.7.1</phive-rules.version>
 
-    <peppol-commons.version>13.2.3</peppol-commons.version>
+    <peppol-commons.version>13.3.0</peppol-commons.version>
     <ph-cii.version>4.1.4</ph-cii.version>
     <ph-schematron.version>10.3.3</ph-schematron.version>
     <ph-ubl.version>10.3.0</ph-ubl.version>
